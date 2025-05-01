@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>TISR-Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"C:\UOC\2024-2025\2ºsemestre\Representación del Conocimiento\PEC2 Representacion\documentacion-v5","image":"http://vowl.visualdataweb.org/webvowl/#iri=C:\UOC\2024-2025\2ºsemestre\Representación del Conocimiento\PEC2 Representacion\documentacion-v5","name":"TISR-Ontology", "headline":"The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors.", "dateReleased":"Wed Apr 30 17:37:46 CEST 2025", "author":[{"@type":"Person","name":"Miguel Angel Pareja"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>TISR-Ontology</h1>
+
+
+<dl>
+<dt>Authors:</dt>
+<dd>Miguel Angel Pareja</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Miguel Angel Pareja. TISR-Ontology.</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/&gt;</td></tr>
+<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1/&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">TISR-Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel">Beach Hotel</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel">Business Hotel</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport">BusTransport</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert">Concert</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter">CulturalCenter</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition">CulturalExhibition</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival">Festival</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair">GastronomicFair</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant">Gourmet Restaurant</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant">International Restaurant</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel">Luxury Hotel</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport">MetroTransport</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument">Monument</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel">Mountain Hotel</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum">Museum</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park">Park</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel">Rural Hotel</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport">TaxiTransport</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant">Traditional Restaurant</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport">tramTransport</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn">heldIn</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice">averagePrice</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company">company</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType">cuisineType</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date">date</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location">location</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price">price</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars">stars</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract">
+         <span>abstract</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2000/01/rdf-schema#sameAs" title="http://www.w3.org/2000/01/rdf-schema#sameAs">
+         <span>same As</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla">
+         <span>Autobus Sevilla</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla">
+         <span>Castillo Sevilla</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla">
+         <span>Feria Sevilla</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla">
+         <span>Hotel Vista Sevilla</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla">
+         <span>Restaurante Fusión Sevilla</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"
+         title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">
+         <span>Sevilla</span>
+      </a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">TISR-Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The purpose of this ontology is to establish a tourist map of cities of interest, providing a knowledge structure that enables:
+
+      • Improving the organization and accessibility of tourism information.
+      • Supporting automatic personalized recommendation mechanisms.
+      • Facilitating the integration of open and heterogeneous data sources.
+      • Promoting interoperability between smart tourism service platforms.
+
+The main use case consists of a smart tourism system that offers personalized recommendations to visitors, such as:
+
+      • Suggesting relevant events based on user location and preferences.
+      • Recommending hotels based on price range and user ratings.
+      • Guiding users in selecting tourist attractions according to their interests.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for TISR-Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by TISR-Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel">Beach Hotel</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel">Business Hotel</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport">BusTransport</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert">Concert</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter">CulturalCenter</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition">CulturalExhibition</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival">Festival</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair">GastronomicFair</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant">Gourmet Restaurant</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant">International Restaurant</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel">Luxury Hotel</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport">MetroTransport</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument">Monument</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel">Mountain Hotel</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum">Museum</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park">Park</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel">Rural Hotel</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport">TaxiTransport</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant">Traditional Restaurant</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport">tramTransport</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">
+  <h3>Attraction<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction</p>
+  <div class="comment">
+   <span class="markdown">A place of interest where tourists visit, typically for its cultural value, historical significance, or natural beauty</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter">CulturalCenter</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument">Monument</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum">Museum</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park">Park</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel">
+  <h3>Beach Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel</p>
+  <div class="comment">
+   <span class="markdown">A hotel located near a beach or coastal area.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla">Hotel Vista Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel">
+  <h3>Business Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel</p>
+  <div class="comment">
+   <span class="markdown">A hotel catering primarily to business travelers.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport">
+  <h3>BusTransport<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport</p>
+  <div class="comment">
+   <span class="markdown">Public transport service using buses</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla">Autobus Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">
+  <h3>City<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City</p>
+  <div class="comment">
+   <span class="markdown">A populated urban area</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location">location</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location">location</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert">
+  <h3>Concert<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert</p>
+  <div class="comment">
+   <span class="markdown">A live musical performance before an audience</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter">
+  <h3>CulturalCenter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter</p>
+  <div class="comment">
+   <span class="markdown">A facility dedicated to cultural activities</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition">
+  <h3>CulturalExhibition<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition</p>
+  <div class="comment">
+   <span class="markdown">An event of cultural interest</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">
+  <h3>Event<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event</p>
+  <div class="comment">
+   <span class="markdown">An organized occasion such as a festival or concert</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn">heldIn</a> <sup class="type-op" title="object property">op</sup> <span class="logic">exactly</span> 1 <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert">Concert</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition">CulturalExhibition</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival">Festival</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair">GastronomicFair</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date">date</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival">
+  <h3>Festival<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival</p>
+  <div class="comment">
+   <span class="markdown">A day or period of celebration</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla">Feria Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair">
+  <h3>GastronomicFair<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair</p>
+  <div class="comment">
+   <span class="markdown">An event focused on food</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant">
+  <h3>Gourmet Restaurant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant</p>
+  <div class="comment">
+   <span class="markdown">A restaurant specializing in high-quality, often luxurious food</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">
+  <h3>Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel</p>
+  <div class="comment">
+   <span class="markdown">An establishment providing accommodation, meals</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars">stars</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel">Beach Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel">Business Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel">Luxury Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel">Mountain Hotel</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel">Rural Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price">price</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars">stars</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant">
+  <h3>International Restaurant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant</p>
+  <div class="comment">
+   <span class="markdown">A restaurant specializing in international food</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla">Restaurante Fusión Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel">
+  <h3>Luxury Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel</p>
+  <div class="comment">
+   <span class="markdown">A high-end hotel offering premium services and facilities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport">
+  <h3>MetroTransport<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport</p>
+  <div class="comment">
+   <span class="markdown">Public transport service on underground tracks</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument">
+  <h3>Monument<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument</p>
+  <div class="comment">
+   <span class="markdown">A structure built to commemorate a notable person or event</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla">Castillo Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel">
+  <h3>Mountain Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel</p>
+  <div class="comment">
+   <span class="markdown">A hotel situated in or near a mountainous region</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum">
+  <h3>Museum<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum</p>
+  <div class="comment">
+   <span class="markdown">A building where objects of historical, scientific, artistic, or cultural interest are stored and exhibited</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park">
+  <h3>Park<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park</p>
+  <div class="comment">
+   <span class="markdown">A large public green area in a town</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">
+  <h3>Restaurant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant</p>
+  <div class="comment">
+   <span class="markdown">A place where meals are prepared and served to customers</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType">cuisineType</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant">Gourmet Restaurant</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant">International Restaurant</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant">Traditional Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice">averagePrice</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType">cuisineType</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel">
+  <h3>Rural Hotel<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel</p>
+  <div class="comment">
+   <span class="markdown">A hotel located in the countryside, often in natural or remote areas</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport">
+  <h3>TaxiTransport<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport</p>
+  <div class="comment">
+   <span class="markdown">A transport service using cars available for private hire</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant">
+  <h3>Traditional Restaurant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant</p>
+  <div class="comment">
+   <span class="markdown">A restaurant specializing in traditional cuisine.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport">
+  <h3>tramTransport<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport</p>
+  <div class="comment">
+   <span class="markdown">Public transport service on non-underground tracks</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">
+  <h3>Transport<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport</p>
+  <div class="comment">
+   <span class="markdown">Means of moving people from one place to another</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company">company</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup> <span class="logic">exactly</span> 1
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport">BusTransport</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport">MetroTransport</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport">TaxiTransport</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport">tramTransport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice">averagePrice</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company">company</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn">heldIn</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn">
+  <h3>heldIn<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn</p>
+  <div class="comment">
+   <span class="markdown">Relationship with the city where the event is held</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topObjectProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topObjectProperty">top Object Property</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">
+  <h3>locatedIn<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn</p>
+  <div class="comment">
+   <span class="markdown">Relationship with the city class</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topObjectProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topObjectProperty">top Object Property</a> <sup class="type-op" title="object property">op</sup> <span class="logic">some</span> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice">averagePrice</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company">company</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType">cuisineType</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date">date</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location">location</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price">price</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars">stars</a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice">
+  <h3>averagePrice<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice</p>
+  <div class="comment">
+   <span class="markdown">The average cost of a meal or service</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company">
+  <h3>company<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company</p>
+  <div class="comment">
+   <span class="markdown">The transport service provider company</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType">
+  <h3>cuisineType<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType</p>
+  <div class="comment">
+   <span class="markdown">The type of cuisine offered by a restaurant</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date">
+  <h3>date<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date</p>
+  <div class="comment">
+   <span class="markdown">The date of an event</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location">
+  <h3>location<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location</p>
+  <div class="comment">
+   <span class="markdown">The geographical location(lat, long) of the city</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">
+  <h3>name<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name</p>
+  <div class="comment">
+   <span class="markdown">The official name of the entity</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price">
+  <h3>price<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price</p>
+  <div class="comment">
+   <span class="markdown">The price per night in a hotel</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">
+  <h3>rating<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating</p>
+  <div class="comment">
+   <span class="markdown">The rating given by customers</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant">Restaurant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars">
+  <h3>stars<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars</p>
+  <div class="comment">
+   <span class="markdown">represent the Hotels quality level</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel">Hotel</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">
+  <h3>type<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type</p>
+  <div class="comment">
+   <span class="markdown">The category or classification of the entity</span>
+  </div>
+  <div class="description">
+   <p><strong>has characteristics: </strong> functional</p>
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2002/07/owl#topDataProperty" target="_blank" title="http://www.w3.org/2002/07/owl#topDataProperty">top Data Property</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction">Attraction</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event">Event</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport">Transport</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract"> <span>abstract</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
+  <li><a href="#http://www.w3.org/2000/01/rdf-schema#sameAs" title="http://www.w3.org/2000/01/rdf-schema#sameAs"> <span>same As</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/terms/abstract">
+  <h3>abstract<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/abstract</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2000/01/rdf-schema#sameAs">
+  <h3>same As<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2000/01/rdf-schema#sameAs</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla"> <span>Autobus Sevilla</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla"> <span>Castillo Sevilla</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla"> <span>Feria Sevilla</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla"> <span>Hotel Vista Sevilla</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla"> <span>Restaurante Fusión Sevilla</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"> <span>Sevilla</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla">
+  <h3>Autobus Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport">BusTransport</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company">company</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Urban Sevilla"</span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price">price</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"8.2"^^<a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a> </span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Autobús"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla">
+  <h3>Castillo Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument">Monument</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Castillo Sevilla"</span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"3.7"^^<a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a> </span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Monumento"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla">
+  <h3>Feria Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival">Festival</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn">heldIn</a> <sup class="type-op" title="object property">op</sup> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date">date</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"2024-11-09"</span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Feria Sevilla"</span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Gastronómico"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla">
+  <h3>Hotel Vista Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel">Beach Hotel</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price">price</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"278.0"^^<a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a> </span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"4.7"^^<a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a> </span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars">stars</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a> </span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Playa"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla">
+  <h3>Restaurante Fusión Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant">International Restaurant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn">locatedIn</a> <sup class="type-op" title="object property">op</sup> <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">Sevilla</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice">averagePrice</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"11.0"^^<a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a> </span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType">cuisineType</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Internacional"</span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating">rating</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"4.9"^^<a href="http://www.w3.org/2001/XMLSchema#float" target="_blank" title="http://www.w3.org/2001/XMLSchema#float">float</a> </span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type">type</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Italiana"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">
+  <h3>Sevilla<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla</p>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City">City</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location">location</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"37.3886,-5.9823"</span>
+   </dd>
+   <dd>
+    <a href="#http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name" title="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name">name</a> <sup class="type-dp" title="data property">dp</sup> <span class="literal">"Sevilla"</span>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
