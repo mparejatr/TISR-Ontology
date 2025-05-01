@@ -230,21 +230,6 @@
   "@id" : "http://purl.org/dc/terms/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/elements/1.1/creator" : [ {
-    "@value" : "Miguel Angel Pareja"
-  } ],
-  "http://purl.org/dc/elements/1.1/title" : [ {
-    "@value" : "TISR-Ontology"
-  } ],
-  "http://purl.org/dc/terms/abstract" : [ {
-    "@value" : "The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors."
-  } ],
-  "http://purl.org/dc/terms/description" : [ {
-    "@value" : "The purpose of this ontology is to establish a tourist map of cities of interest, providing a knowledge structure that enables:\n\n      • Improving the organization and accessibility of tourism information.\n      • Supporting automatic personalized recommendation mechanisms.\n      • Facilitating the integration of open and heterogeneous data sources.\n      • Promoting interoperability between smart tourism service platforms.\n\nThe main use case consists of a smart tourism system that offers personalized recommendations to visitors, such as:\n\n      • Suggesting relevant events based on user location and preferences.\n      • Recommending hotels based on price range and user ratings.\n      • Guiding users in selecting tourist attractions according to their interests."
-  } ]
-}, {
   "@id" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -920,4 +905,19 @@
 }, {
   "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://mparejatr.github.io/TISR-Ontology/docs/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Miguel Angel Pareja"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@value" : "TISR-Ontology"
+  } ],
+  "http://purl.org/dc/terms/abstract" : [ {
+    "@value" : "The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors."
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "The purpose of this ontology is to establish a tourist map of cities of interest, providing a knowledge structure that enables:\n\n      • Improving the organization and accessibility of tourism information.\n      • Supporting automatic personalized recommendation mechanisms.\n      • Facilitating the integration of open and heterogeneous data sources.\n      • Promoting interoperability between smart tourism service platforms.\n\nThe main use case consists of a smart tourism system that offers personalized recommendations to visitors, such as:\n\n      • Suggesting relevant events based on user location and preferences.\n      • Recommending hotels based on price range and user ratings.\n      • Guiding users in selecting tourist attractions according to their interests."
+  } ]
 } ]

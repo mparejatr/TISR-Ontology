@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/"
-     xml:base="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/"
+<rdf:RDF xmlns="urn:absolute:4/"
+     xml:base="urn:absolute:4/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4">
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/">
+    <owl:Ontology rdf:about="https://mparejatr.github.io/TISR-Ontology/docs/">
         <dc:creator>Miguel Angel Pareja</dc:creator>
         <dc:title>TISR-Ontology</dc:title>
         <terms:abstract>The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors.</terms:abstract>
@@ -649,10 +650,10 @@ The main use case consists of a smart tourism system that offers personalized re
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla">
         <rdf:type rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport"/>
-        <locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
-        <company>Urban Sevilla</company>
-        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.2</price>
-        <type>Autobús</type>
+        <untitled-ontology-4:locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
+        <untitled-ontology-4:company>Urban Sevilla</untitled-ontology-4:company>
+        <untitled-ontology-4:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.2</untitled-ontology-4:price>
+        <untitled-ontology-4:type>Autobús</untitled-ontology-4:type>
     </owl:NamedIndividual>
     
 
@@ -661,10 +662,10 @@ The main use case consists of a smart tourism system that offers personalized re
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla">
         <rdf:type rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument"/>
-        <locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
-        <name>Castillo Sevilla</name>
-        <rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.7</rating>
-        <type>Monumento</type>
+        <untitled-ontology-4:locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
+        <untitled-ontology-4:name>Castillo Sevilla</untitled-ontology-4:name>
+        <untitled-ontology-4:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.7</untitled-ontology-4:rating>
+        <untitled-ontology-4:type>Monumento</untitled-ontology-4:type>
     </owl:NamedIndividual>
     
 
@@ -673,10 +674,10 @@ The main use case consists of a smart tourism system that offers personalized re
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla">
         <rdf:type rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival"/>
-        <heldIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
-        <date>2024-11-09</date>
-        <name>Feria Sevilla</name>
-        <type>Gastronómico</type>
+        <untitled-ontology-4:heldIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
+        <untitled-ontology-4:date>2024-11-09</untitled-ontology-4:date>
+        <untitled-ontology-4:name>Feria Sevilla</untitled-ontology-4:name>
+        <untitled-ontology-4:type>Gastronómico</untitled-ontology-4:type>
     </owl:NamedIndividual>
     
 
@@ -685,11 +686,11 @@ The main use case consists of a smart tourism system that offers personalized re
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla">
         <rdf:type rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel"/>
-        <locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
-        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">278.0</price>
-        <rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.7</rating>
-        <stars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</stars>
-        <type>Playa</type>
+        <untitled-ontology-4:locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
+        <untitled-ontology-4:price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">278.0</untitled-ontology-4:price>
+        <untitled-ontology-4:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.7</untitled-ontology-4:rating>
+        <untitled-ontology-4:stars rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</untitled-ontology-4:stars>
+        <untitled-ontology-4:type>Playa</untitled-ontology-4:type>
     </owl:NamedIndividual>
     
 
@@ -698,11 +699,11 @@ The main use case consists of a smart tourism system that offers personalized re
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla">
         <rdf:type rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant"/>
-        <locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
-        <averagePrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">11.0</averagePrice>
-        <cuisineType>Internacional</cuisineType>
-        <rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.9</rating>
-        <type>Italiana</type>
+        <untitled-ontology-4:locatedIn rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla"/>
+        <untitled-ontology-4:averagePrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">11.0</untitled-ontology-4:averagePrice>
+        <untitled-ontology-4:cuisineType>Internacional</untitled-ontology-4:cuisineType>
+        <untitled-ontology-4:rating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.9</untitled-ontology-4:rating>
+        <untitled-ontology-4:type>Italiana</untitled-ontology-4:type>
     </owl:NamedIndividual>
     
 
@@ -711,8 +712,8 @@ The main use case consists of a smart tourism system that offers personalized re
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla">
         <rdf:type rdf:resource="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City"/>
-        <location>37.3886,-5.9823</location>
-        <name>Sevilla</name>
+        <untitled-ontology-4:location>37.3886,-5.9823</untitled-ontology-4:location>
+        <untitled-ontology-4:name>Sevilla</untitled-ontology-4:name>
     </owl:NamedIndividual>
 </rdf:RDF>
 

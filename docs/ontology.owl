@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4#"
-     xml:base="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4"
+<rdf:RDF xmlns="https://mparejatr.github.io/TISR-Ontology/docs/"
+     xml:base="https://mparejatr.github.io/TISR-Ontology/docs/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:untitled-ontology-4="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4">
+    <owl:Ontology rdf:about="https://mparejatr.github.io/TISR-Ontology/docs/">
         <dc:creator>Miguel Angel Pareja</dc:creator>
         <dc:title>TISR-Ontology</dc:title>
         <terms:abstract>The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors.</terms:abstract>
