@@ -1,0 +1,1072 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2002/07/owl", "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "undefined" : "TISR-Ontology"
+    },
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "author" : [ "Miguel Angel Pareja" ],
+    "description" : {
+      "undefined" : "The purpose of this ontology is to establish a tourist map of cities of interest, providing a knowledge structure that enables:\n\n      • Improving the organization and accessibility of tourism information.\n      • Supporting automatic personalized recommendation mechanisms.\n      • Facilitating the integration of open and heterogeneous data sources.\n      • Promoting interoperability between smart tourism service platforms.\n\nThe main use case consists of a smart tourism system that offers personalized recommendations to visitors, such as:\n\n      • Suggesting relevant events based on user location and preferences.\n      • Recommending hotels based on price range and user ratings.\n      • Guiding users in selecting tourist attractions according to their interests."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Miguel Angel Pareja",
+        "type" : "label"
+      } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "undefined",
+        "value" : "The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors.",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "TISR-Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "53",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Festival",
+      "undefined" : "Festival"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla",
+      "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+      "labels" : {
+        "IRI-based" : "Feria_Sevilla"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A day or period of celebration"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MountainHotel",
+      "undefined" : "Mountain Hotel"
+    },
+    "comment" : {
+      "undefined" : "A hotel situated in or near a mountainous region"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Transport",
+      "undefined" : "Transport"
+    },
+    "subClasses" : [ "10", "11", "12", "13" ],
+    "comment" : {
+      "undefined" : "Means of moving people from one place to another"
+    },
+    "attributes" : [ "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "City",
+      "undefined" : "City"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla",
+      "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+      "labels" : {
+        "IRI-based" : "Sevilla"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A populated urban area"
+    },
+    "attributes" : [ "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BusinessHotel",
+      "undefined" : "Business Hotel"
+    },
+    "comment" : {
+      "undefined" : "A hotel catering primarily to business travelers."
+    },
+    "attributes" : [ "external" ],
+    "id" : "15",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Park",
+      "undefined" : "Park"
+    },
+    "comment" : {
+      "undefined" : "A large public green area in a town"
+    },
+    "attributes" : [ "external" ],
+    "id" : "22",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LuxuryHotel",
+      "undefined" : "Luxury Hotel"
+    },
+    "comment" : {
+      "undefined" : "A high-end hotel offering premium services and facilities."
+    },
+    "attributes" : [ "external" ],
+    "id" : "26",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Monument",
+      "undefined" : "Monument"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla",
+      "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+      "labels" : {
+        "IRI-based" : "Castillo_Sevilla"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A structure built to commemorate a notable person or event"
+    },
+    "attributes" : [ "external" ],
+    "id" : "24",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TaxiTransport",
+      "undefined" : "TaxiTransport"
+    },
+    "comment" : {
+      "undefined" : "A transport service using cars available for private hire"
+    },
+    "attributes" : [ "external" ],
+    "id" : "10",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RuralHotel",
+      "undefined" : "Rural Hotel"
+    },
+    "comment" : {
+      "undefined" : "A hotel located in the countryside, often in natural or remote areas"
+    },
+    "attributes" : [ "external" ],
+    "id" : "41",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TramTransport",
+      "undefined" : "tramTransport"
+    },
+    "comment" : {
+      "undefined" : "Public transport service on non-underground tracks"
+    },
+    "attributes" : [ "external" ],
+    "id" : "12",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CulturalExhibition",
+      "undefined" : "CulturalExhibition"
+    },
+    "comment" : {
+      "undefined" : "An event of cultural interest"
+    },
+    "attributes" : [ "external" ],
+    "id" : "44",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Museum",
+      "undefined" : "Museum"
+    },
+    "comment" : {
+      "undefined" : "A building where objects of historical, scientific, artistic, or cultural interest are stored and exhibited"
+    },
+    "attributes" : [ "external" ],
+    "id" : "33",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Hotel",
+      "undefined" : "Hotel"
+    },
+    "subClasses" : [ "15", "7", "41", "39", "26" ],
+    "comment" : {
+      "undefined" : "An establishment providing accommodation, meals"
+    },
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "instances" : 0,
+    "union" : [ "8", "19", "50" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "49"
+  }, {
+    "instances" : 0,
+    "union" : [ "2", "9", "19" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "51"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "50" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "53"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "21",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "14", "2", "8", "19", "50" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GourmetRestaurant",
+      "undefined" : "Gourmet Restaurant"
+    },
+    "comment" : {
+      "undefined" : "A restaurant specializing in high-quality, often luxurious food"
+    },
+    "attributes" : [ "external" ],
+    "id" : "56",
+    "superClasses" : [ "50" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "57",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concert",
+      "undefined" : "Concert"
+    },
+    "comment" : {
+      "undefined" : "A live musical performance before an audience"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TrainTransport",
+      "undefined" : "MetroTransport"
+    },
+    "comment" : {
+      "undefined" : "Public transport service  on underground tracks"
+    },
+    "attributes" : [ "external" ],
+    "id" : "11",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InternationalRestaurant",
+      "undefined" : "International Restaurant"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla",
+      "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+      "labels" : {
+        "IRI-based" : "Restaurante_Fusión_Sevilla"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A restaurant specializing in international food"
+    },
+    "attributes" : [ "external" ],
+    "id" : "58",
+    "superClasses" : [ "50" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "59",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "43",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GastronomicFair",
+      "undefined" : "GastronomicFair"
+    },
+    "comment" : {
+      "undefined" : "An event focused on food"
+    },
+    "attributes" : [ "external" ],
+    "id" : "60",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "61",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "37",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "62",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "63",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "54",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "29",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BusTransport",
+      "undefined" : "BusTransport"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla",
+      "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+      "labels" : {
+        "IRI-based" : "Autobus_Sevilla"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "Public transport service using buses"
+    },
+    "attributes" : [ "external" ],
+    "id" : "13",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Attraction",
+      "undefined" : "Attraction"
+    },
+    "subClasses" : [ "24", "33", "22", "18" ],
+    "comment" : {
+      "undefined" : "A place of interest where tourists visit, typically for its cultural value, historical significance, or natural beauty"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TraditionalRestaurant",
+      "undefined" : "Traditional Restaurant"
+    },
+    "comment" : {
+      "undefined" : "A restaurant specializing in traditional cuisine."
+    },
+    "attributes" : [ "external" ],
+    "id" : "66",
+    "superClasses" : [ "50" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CulturalCenter",
+      "undefined" : "CulturalCenter"
+    },
+    "comment" : {
+      "undefined" : "A facility dedicated to cultural activities"
+    },
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "19" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event",
+      "undefined" : "Event"
+    },
+    "subClasses" : [ "6", "1", "60", "44" ],
+    "comment" : {
+      "undefined" : "An organized occasion such as a festival or concert"
+    },
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BeachHotel",
+      "undefined" : "Beach Hotel"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla",
+      "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+      "labels" : {
+        "IRI-based" : "Hotel_Vista_Sevilla"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A hotel located near a beach or coastal area."
+    },
+    "attributes" : [ "external" ],
+    "id" : "39",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Restaurant",
+      "undefined" : "Restaurant"
+    },
+    "subClasses" : [ "58", "66", "56" ],
+    "comment" : {
+      "undefined" : "A place where meals are prepared and served to customers"
+    },
+    "attributes" : [ "external" ],
+    "id" : "50"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "3",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "64",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "65",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "67",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "71",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "72",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "name",
+      "undefined" : "name"
+    },
+    "cardinality" : "1",
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "The official name of the entity"
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "3"
+  }, {
+    "range" : "2",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "16"
+  }, {
+    "range" : "19",
+    "domain" : "18",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "21",
+    "attributes" : [ "object", "external" ],
+    "id" : "20"
+  }, {
+    "range" : "19",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "23"
+  }, {
+    "range" : "8",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "25"
+  }, {
+    "range" : "19",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "company",
+      "undefined" : "company"
+    },
+    "cardinality" : "1",
+    "domain" : "9",
+    "comment" : {
+      "undefined" : "The transport service provider company"
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "stars",
+      "undefined" : "stars"
+    },
+    "cardinality" : "1",
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "represent the Hotels quality level"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "30"
+  }, {
+    "range" : "19",
+    "domain" : "33",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "32"
+  }, {
+    "range" : "8",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "34"
+  }, {
+    "range" : "8",
+    "domain" : "15",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "price",
+      "undefined" : "price"
+    },
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "The price per night in a hotel"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "36"
+  }, {
+    "range" : "8",
+    "domain" : "39",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "38"
+  }, {
+    "range" : "8",
+    "domain" : "41",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "40"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "date",
+      "undefined" : "date"
+    },
+    "domain" : "2",
+    "comment" : {
+      "undefined" : "The date of an event"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "locatedIn",
+      "undefined" : "locatedIn"
+    },
+    "domain" : "21",
+    "comment" : {
+      "undefined" : "Relationship with the city class"
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "45"
+  }, {
+    "range" : "9",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "range" : "9",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "47"
+  }, {
+    "range" : "9",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "54",
+    "label" : {
+      "IRI-based" : "averagePrice",
+      "undefined" : "averagePrice"
+    },
+    "domain" : "53",
+    "comment" : {
+      "undefined" : "The average cost of a meal or service"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "52"
+  }, {
+    "range" : "9",
+    "domain" : "10",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "cuisineType",
+      "undefined" : "cuisineType"
+    },
+    "cardinality" : "1",
+    "domain" : "50",
+    "comment" : {
+      "undefined" : "The type of cuisine offered by a restaurant"
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "62",
+    "label" : {
+      "IRI-based" : "rating",
+      "undefined" : "rating"
+    },
+    "cardinality" : "1",
+    "domain" : "49",
+    "comment" : {
+      "undefined" : "The rating given by customers"
+    },
+    "attributes" : [ "datatype", "external" ],
+    "id" : "65"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "type",
+      "undefined" : "type"
+    },
+    "cardinality" : "1",
+    "domain" : "51",
+    "comment" : {
+      "undefined" : "The category or classification of the entity"
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "heldIn",
+      "undefined" : "heldIn"
+    },
+    "domain" : "21",
+    "comment" : {
+      "undefined" : "Relationship with the city where the event is held"
+    },
+    "attributes" : [ "object", "external" ],
+    "id" : "68"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "57",
+    "label" : {
+      "IRI-based" : "topDataProperty"
+    },
+    "domain" : "21",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "69"
+  }, {
+    "range" : "50",
+    "domain" : "56",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "70"
+  }, {
+    "iri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location",
+    "baseIri" : "http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "location",
+      "undefined" : "location"
+    },
+    "cardinality" : "1",
+    "domain" : "14",
+    "comment" : {
+      "undefined" : "The geographical location(lat, long) of the city"
+    },
+    "attributes" : [ "functional", "datatype", "external" ],
+    "id" : "71"
+  }, {
+    "range" : "2",
+    "domain" : "44",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "72"
+  }, {
+    "range" : "2",
+    "domain" : "60",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "73"
+  }, {
+    "range" : "50",
+    "domain" : "66",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "74"
+  }, {
+    "range" : "50",
+    "domain" : "58",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "75"
+  } ]
+}
