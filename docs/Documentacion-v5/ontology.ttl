@@ -1,0 +1,500 @@
+@prefix : <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4#> .
+
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4> rdf:type owl:Ontology ;
+                                                                            <http://purl.org/dc/elements/1.1/creator> "Miguel Angel Pareja" ;
+                                                                            <http://purl.org/dc/elements/1.1/title> "TISR-Ontology" ;
+                                                                            <http://purl.org/dc/terms/abstract> "The TISR-Ontology has been developed to address the growing need for structured and interoperable information within the domain of urban tourism. In increasingly connected cities, tourism management requires the integration of heterogeneous data sources to provide more personalized, dynamic, and efficient services to visitors." ;
+                                                                            <http://purl.org/dc/terms/description> """The purpose of this ontology is to establish a tourist map of cities of interest, providing a knowledge structure that enables:
+
+      • Improving the organization and accessibility of tourism information.
+      • Supporting automatic personalized recommendation mechanisms.
+      • Facilitating the integration of open and heterogeneous data sources.
+      • Promoting interoperability between smart tourism service platforms.
+
+The main use case consists of a smart tourism system that offers personalized recommendations to visitors, such as:
+
+      • Suggesting relevant events based on user location and preferences.
+      • Recommending hotels based on price range and user ratings.
+      • Guiding users in selecting tourist attractions according to their interests.""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> ;
+                                                                                                owl:someValuesFrom <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event>
+                                                                                              ] ;
+                                                                                  rdfs:range [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty owl:topObjectProperty ;
+                                                                                               owl:someValuesFrom <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City>
+                                                                                             ] ;
+                                                                                  rdfs:comment "Relationship with the city where the event is held" ;
+                                                                                  rdfs:label "heldIn" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:domain [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> ;
+                                                                                                   owl:someValuesFrom <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> ;
+                                                                                                   owl:someValuesFrom <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> ;
+                                                                                                   owl:someValuesFrom <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant>
+                                                                                                 ] ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> ;
+                                                                                                   owl:someValuesFrom <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport>
+                                                                                                 ] ;
+                                                                                     rdfs:range [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty owl:topObjectProperty ;
+                                                                                                  owl:someValuesFrom <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City>
+                                                                                                ] ;
+                                                                                     rdfs:comment "Relationship with the city class" ;
+                                                                                     rdfs:label "locatedIn" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice> rdf:type owl:DatatypeProperty ;
+                                                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> ,
+                                                                                                    <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> ;
+                                                                                        rdfs:range xsd:float ;
+                                                                                        rdfs:comment "The average cost of a meal or service" ;
+                                                                                        rdfs:label "averagePrice" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company> rdf:type owl:DatatypeProperty ;
+                                                                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                   rdf:type owl:FunctionalProperty ;
+                                                                                   rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> ;
+                                                                                   rdfs:range xsd:string ;
+                                                                                   rdfs:comment "The transport service provider company" ;
+                                                                                   rdfs:label "company" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                       rdf:type owl:FunctionalProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> ;
+                                                                                       rdfs:range xsd:string ;
+                                                                                       rdfs:comment "The type of cuisine offered by a restaurant" ;
+                                                                                       rdfs:label "cuisineType" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> ;
+                                                                                rdfs:range xsd:string ;
+                                                                                rdfs:comment "The date of an event" ;
+                                                                                rdfs:label "date" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                    rdf:type owl:FunctionalProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City> ;
+                                                                                    rdfs:range xsd:string ;
+                                                                                    rdfs:comment "The geographical location(lat, long) of the city" ;
+                                                                                    rdfs:label "location" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                rdf:type owl:FunctionalProperty ;
+                                                                                rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> ,
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City> ,
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> ,
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ,
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> ;
+                                                                                rdfs:range xsd:string ;
+                                                                                rdfs:comment "The official name of the entity" ;
+                                                                                rdfs:label "name" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ;
+                                                                                 rdfs:range xsd:float ;
+                                                                                 rdfs:comment "The price per night in a hotel" ;
+                                                                                 rdfs:label "price" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating> rdf:type owl:DatatypeProperty ;
+                                                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> ,
+                                                                                              <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ,
+                                                                                              <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> ;
+                                                                                  rdfs:range xsd:float ;
+                                                                                  rdfs:comment "The rating given by customers" ;
+                                                                                  rdfs:label "rating" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ;
+                                                                                 rdfs:range xsd:integer ;
+                                                                                 rdfs:comment "represent the Hotels quality level" ;
+                                                                                 rdfs:label "stars" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                rdf:type owl:FunctionalProperty ;
+                                                                                rdfs:domain <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> ,
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> ,
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> ;
+                                                                                rdfs:range xsd:string ;
+                                                                                rdfs:comment "The category or classification of the entity" ;
+                                                                                rdfs:label "type" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> rdf:type owl:Class ;
+                                                                                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> ;
+                                                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                            owl:onClass <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City>
+                                                                                                          ] ,
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name> ;
+                                                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                            owl:onDataRange xsd:string
+                                                                                                          ] ;
+                                                                                      rdfs:comment "A place of interest where tourists visit, typically for its cultural value, historical significance, or natural beauty" ;
+                                                                                      rdfs:label "Attraction" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ;
+                                                                                      rdfs:comment "A hotel located near a beach or coastal area." ;
+                                                                                      rdfs:label "Beach Hotel" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> ;
+                                                                                        rdfs:comment "Public transport service using buses" ;
+                                                                                        rdfs:label "BusTransport" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusinessHotel> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ;
+                                                                                         rdfs:comment "A hotel catering primarily to business travelers." ;
+                                                                                         rdfs:label "Business Hotel" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City> rdf:type owl:Class ;
+                                                                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location> ;
+                                                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                      owl:onDataRange xsd:string
+                                                                                                    ] ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name> ;
+                                                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                      owl:onDataRange xsd:string
+                                                                                                    ] ;
+                                                                                rdfs:comment "A populated urban area" ;
+                                                                                rdfs:label "City" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Concert> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> ;
+                                                                                   rdfs:comment "A live musical performance before an audience" ;
+                                                                                   rdfs:label "Concert" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalCenter> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> ;
+                                                                                          rdfs:comment "A facility dedicated to cultural activities" ;
+                                                                                          rdfs:label "CulturalCenter" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/CulturalExhibition> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> ;
+                                                                                              rdfs:comment "An event of cultural interest" ;
+                                                                                              rdfs:label "CulturalExhibition" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> rdf:type owl:Class ;
+                                                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onDataRange xsd:string
+                                                                                                     ] ;
+                                                                                 rdfs:comment "An organized occasion such as a festival or concert" ;
+                                                                                 rdfs:label "Event" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> ;
+                                                                                    rdfs:comment "A day or period of celebration" ;
+                                                                                    rdfs:label "Festival" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GastronomicFair> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Event> ;
+                                                                                           rdfs:comment "An event focused on food" ;
+                                                                                           rdfs:label "GastronomicFair" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/GourmetRestaurant> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> ;
+                                                                                             rdfs:comment "A restaurant specializing in high-quality, often luxurious food" ;
+                                                                                             rdfs:label "Gourmet Restaurant" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> rdf:type owl:Class ;
+                                                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onDataRange xsd:int
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> ;
+                                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onDataRange xsd:string
+                                                                                                     ] ;
+                                                                                 rdfs:comment "An establishment providing accommodation, meals" ;
+                                                                                 rdfs:label "Hotel" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant> rdf:type owl:Class ;
+                                                                                                   rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> ;
+                                                                                                   rdfs:comment "A restaurant specializing in international food" ;
+                                                                                                   rdfs:label "International Restaurant" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/LuxuryHotel> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ;
+                                                                                       rdfs:comment "A high-end hotel offering premium services and facilities." ;
+                                                                                       rdfs:label "Luxury Hotel" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> ;
+                                                                                    rdfs:comment "A structure built to commemorate a notable person or event" ;
+                                                                                    rdfs:label "Monument" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/MountainHotel> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ;
+                                                                                         rdfs:comment "A hotel situated in or near a mountainous region" ;
+                                                                                         rdfs:label "Mountain Hotel" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Museum> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> ;
+                                                                                  rdfs:comment "A building where objects of historical, scientific, artistic, or cultural interest are stored and exhibited" ;
+                                                                                  rdfs:label "Museum" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Park> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Attraction> ;
+                                                                                rdfs:comment "A large public green area in a town" ;
+                                                                                rdfs:label "Park" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> rdf:type owl:Class ;
+                                                                                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType> ;
+                                                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                            owl:onDataRange xsd:string
+                                                                                                          ] ,
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating> ;
+                                                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                            owl:onDataRange xsd:float
+                                                                                                          ] ;
+                                                                                      rdfs:comment "A place where meals are prepared and served to customers" ;
+                                                                                      rdfs:label "Restaurant" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/RuralHotel> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel> ;
+                                                                                      rdfs:comment "A hotel located in the countryside, often in natural or remote areas" ;
+                                                                                      rdfs:label "Rural Hotel" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TaxiTransport> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> ;
+                                                                                         rdfs:comment "A transport service using cars available for private hire" ;
+                                                                                         rdfs:label "TaxiTransport" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TraditionalRestaurant> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurant> ;
+                                                                                                 rdfs:comment "A restaurant specializing in traditional cuisine." ;
+                                                                                                 rdfs:label "Traditional Restaurant" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TrainTransport> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> ;
+                                                                                          rdfs:comment "Public transport service  on underground tracks" ;
+                                                                                          rdfs:label "MetroTransport" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/TramTransport> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> ;
+                                                                                         rdfs:comment "Public transport service on non-underground tracks" ;
+                                                                                         rdfs:label "tramTransport" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Transport> rdf:type owl:Class ;
+                                                                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company> ;
+                                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                           owl:onDataRange xsd:string
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> ;
+                                                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                           owl:onDataRange xsd:string
+                                                                                                         ] ;
+                                                                                     rdfs:comment "Means of moving people from one place to another" ;
+                                                                                     rdfs:label "Transport" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Autobus_Sevilla> rdf:type owl:NamedIndividual ,
+                                                                                                    <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BusTransport> ;
+                                                                                           <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla> ;
+                                                                                           <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/company> "Urban Sevilla" ;
+                                                                                           <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price> "8.2"^^xsd:float ;
+                                                                                           <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> "Autobús" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Castillo_Sevilla> rdf:type owl:NamedIndividual ,
+                                                                                                     <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Monument> ;
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla> ;
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name> "Castillo Sevilla" ;
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating> "3.7"^^xsd:float ;
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> "Monumento" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Feria_Sevilla> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Festival> ;
+                                                                                         <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/heldIn> <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla> ;
+                                                                                         <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/date> "2024-11-09" ;
+                                                                                         <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name> "Feria Sevilla" ;
+                                                                                         <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> "Gastronómico" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Hotel_Vista_Sevilla> rdf:type owl:NamedIndividual ,
+                                                                                                        <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/BeachHotel> ;
+                                                                                               <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla> ;
+                                                                                               <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/price> "278.0"^^xsd:float ;
+                                                                                               <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating> "4.7"^^xsd:float ;
+                                                                                               <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/stars> 4 ;
+                                                                                               <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> "Playa" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Restaurante_Fusión_Sevilla> rdf:type owl:NamedIndividual ,
+                                                                                                               <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/InternationalRestaurant> ;
+                                                                                                      <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/locatedIn> <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla> ;
+                                                                                                      <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/averagePrice> "11.0"^^xsd:float ;
+                                                                                                      <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/cuisineType> "Internacional" ;
+                                                                                                      <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/rating> "4.9"^^xsd:float ;
+                                                                                                      <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/type> "Italiana" .
+
+
+###  http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla
+<http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/Sevilla> rdf:type owl:NamedIndividual ,
+                                                                                            <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/City> ;
+                                                                                   <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/location> "37.3886,-5.9823" ;
+                                                                                   <http://www.semanticweb.org/reboots/ontologies/2025/3/untitled-ontology-4/name> "Sevilla" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
